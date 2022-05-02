@@ -1,0 +1,429 @@
+/* -- Tabelas -- */
+#total_consulta{
+	text-align: right;
+	color:white;
+	background-color:#6d351a;	
+	font-weight:bold;
+}
+.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{
+	z-index: 99999999;
+}
+.form-control{
+	border:none;
+	border-bottom:1px solid indianred;	
+}
+.btn{
+	margin:10px;
+	margin-left:-5px;
+}
+.table,.grafico{
+	margin:2.5%;
+	width:95%;
+}
+tr:nth-child(even){
+	background-color:#ddd;
+}
+#aviso{
+	margin-top:15px;
+	border:2px solid red;
+	background-color:rgba(205, 92, 92,0.5);
+	color:white;
+	width:90%;
+	padding:15px;
+	text-align: center;
+}
+thead th{
+	background-color:#6d351a;
+	color:white;
+	border-right:1px solid snow;
+}
+table{
+	border:2px solid #ddd;
+}
+tbody{
+	border-color:transparent;
+}
+tr{	
+	width:100%;
+}
+.table>#table_venda>tr>td{
+	 padding: 0;
+}
+.table>#lista-venda>tr>td{
+	 padding: 3px;
+	 height:25px;
+	 line-height: 25px;
+}
+.table{
+	margin-top:15px;
+	margin-bottom:15px;
+}
+#table-con-Vendas{
+    max-height: 320px;
+    max-width: 100%;
+    overflow-x:hidden;
+}
+thead .btn{
+	background-color:indianred;
+	border-color:indianred;
+	 margin:0;
+	 width:100%;
+}
+tr:hover{
+	background-color:#B5B5B5;
+}
+.glyphicon.glyphicon-remove{
+	color:black;
+	border-radius:8px;
+	font-size:20px;
+	margin-left:10px;
+	background-color: #FF3030;
+	width:45px;
+	height:30px;
+	padding:5px;
+	cursor:pointer;
+}
+.glyphicon.glyphicon-edit{
+	color:black;
+	border-radius:8px;
+	font-size:20px;
+	background-color: #EEE9BF;
+	padding:5px;
+	width:45px;
+	height:30px;
+	cursor:pointer;
+}
+table .glyphicon.glyphicon-eye-open{
+	color:black;
+	border-radius:8px;
+	font-size:20px;
+	background-color: #EEEED1;
+	padding:5px;
+	width:45px;
+	height:30px;
+	cursor:pointer;
+}
+
+table .glyphicon.glyphicon-eye-open:active{
+	background-color: #CDCDB4;
+	box-shadow: 0px 0px 0px 1px #EEEED1;
+}
+.glyphicon.glyphicon-edit:active{
+	background-color: #CDC9A5;
+	box-shadow: 0px 0px 0px 1px #EEE9BF;
+}
+.glyphicon.glyphicon-remove:active{
+	background-color: #CD2626;
+	box-shadow: 0px 0px 0px 1px red;
+}
+.f .glyphicon.glyphicon-remove{
+	color:black;
+	border-radius:8px;
+	font-size:16px;
+	margin-left:10px;
+	background-color: #FF3030;
+	width:35px;
+	height:25px;
+	padding:5px;
+	cursor:pointer;
+}
+.f .glyphicon.glyphicon-edit{
+	color:black;
+	border-radius:8px;
+	font-size:16px;
+	background-color: #EEE9BF;
+	padding:5px;
+	width:35px;
+	height:25px;
+	cursor:pointer;
+}
+
+/* -- Grafico -- */
+.grafico{
+	width:95%;
+	height:185px;
+	border:1px solid black;
+	background-color:DimGrey;
+	border-bottom:none;
+	border-top:none;
+}
+.grafico div.conteudo{
+	width:100%;
+	height:155px;
+	margin:0;
+	padding-top: 4px;
+	background-color:grey;
+	
+}
+.grafico legend{
+	width:auto;
+	color:white;
+	margin:0;
+	margin-left:5px;
+	position:relative;
+	border:none;
+}
+#home .grafico,#home .row{
+	margin-top:0;
+	margin-bottom:0px;
+	
+}
+#home{
+	margin-top:5px;
+}
+
+/* -- Cadastro -- */
+
+.registro{
+	margin-left:26%;
+	width:50%;
+	min-height:150px;
+	border:1px solid black;
+	padding:10px;
+	
+}
+.registro legend{
+	width:auto;
+	margin:0;
+	margin-left:5px;
+	border:none;
+}
+.registro input{
+	width:95%;
+	text-indent:5px;
+}
+#cadastro-toggle{
+	z-index: 1000;
+	float:right;
+	font-size:18px;	
+	padding:6px 10px;
+	line-height:0px; 
+}
+#vendas-toggle{
+	height:auto;
+	width:auto;
+	float:right;
+}
+fieldset{
+	clear:both;
+	margin-top:2.5%;
+	margin-bottom:5px;
+}
+.registro p{
+	display:inline-block;
+	color:red;
+	margin:5px;
+}
+.editar p{
+	display:inline-block;
+	color:red;
+	margin:5px;
+}
+label{
+	display:inline-block;
+}
+
+/* -- Barra de Pesquisa -- */
+
+.pesquisa{
+	width:25%;
+	margin-left:38%;
+}
+
+.pesquisa input{
+	margin-top:25px;
+	border-bottom:1px solid indianred;
+}
+.pesquisa .btn.btn-primary{
+	margin-top:25px;
+	background-color:indianred;
+	border-color:indianred;
+}
+
+/* -- Vendas -- */
+
+.legend-table legend{
+	width:auto;
+	margin:0;
+	margin-top:10px;
+	text-indent:35px;
+	border:none;
+	font-size:15px;
+}
+
+fieldset.venda{
+	margin-top:0;
+}
+.registro.venda{
+	display: block;
+	width: 95%; 
+	margin-left: 2.5%;
+}
+.registro.venda input,.registro.venda select{
+	height:30px;
+}
+.registro.venda input{
+/* 	margin-bottom:50px; */
+}
+
+.registro.venda button[type=button]{
+	width:50%;
+	height:50px;
+	font-size:35px;
+	padding:0;
+	margin:5%;
+	margin-top:10px;
+	margin-left:125px;
+	margin-bottom:0;
+}
+.registro .btn-primary{
+	background-color:indianred !important;
+	border:none;
+	box-shadow:none;
+	outline:0;
+}
+
+.btn-primary:focus,
+.btn-primary:hover
+ {
+	background-color:rgba(183, 28, 28, 0.8) !important;
+	border-color:transparent !important;
+	box-shadow:none;
+	outline:0;
+}
+.btn-primary:active,.btn-primary:active:focus,.btn-primary:active:hover{
+	background-color:rgba(183, 28, 28, 0.8) !important;
+	box-shadow:0px 0px 0px 1px rgba(183, 28, 28, 1);
+	outline:0;
+}
+.registro.venda .total {
+	width:50%;
+	height:50px;
+	font-size:35px;
+	margin:5%;
+	padding:0;
+	margin-top:10px;
+	margin-right:0;
+	float:right;
+	margin-bottom:0;
+	display:inline-block;
+	text-indent:15px;
+}
+
+.preco-total{
+	line-height:70px;
+	font-size:35px;
+}
+/* -- Filtro config -- */
+.filtro{
+	margin-left:2.5%;
+	width:95%;
+	min-height:80px;
+	border:1px solid black;
+	padding:0;
+}
+.filtro legend{
+	width:auto;
+	margin:0;
+	margin-left:5px;
+	border:none;
+}
+.filtro input{
+	width:95%;
+	text-indent:5px;
+}
+fieldset.filtro{
+	margin-bottom:0;
+	margin-top:0px;
+}
+.faturamento.table{
+	margin-top:0;
+}
+.formFiltro .col-md-4{
+	margin:0;
+	padding:0;
+}
+.formFiltro .col-md-6 input,.formFiltro .col-md-6 select,.formFiltro .col-md-4 input,.formFiltro .col-md-4 select{
+	border-bottom:1px solid #c3c3c3;
+}
+.formFiltro button{
+	height:40px;
+	width:150px;
+}
+#botaoBusca{
+	margin-top:20px;
+}
+.formFiltro .col-md-8{
+	width:75%;
+	
+}
+.formFiltro .col-md-4{
+	width:35%;
+	
+}
+.filtro .input-group{
+	width:100%;
+}
+#botao{
+	width:200px;
+}
+#botao-fil-produto button{
+	height: 40px;
+	width:90%;
+	margin-top:20px;
+}
+#botao-fil-produto{
+	width:25%;
+
+}
+#botao-fil-produto .col-md-6{
+	width:50%;
+	padding:0;
+}
+.pagination{
+	margin-top:0;
+}
+
+.editar{
+	width:645px;
+	padding-left:15px;
+	padding-right:15px;
+	margin:0;
+}
+
+.process{
+	height:1px;
+	overflow:hidden;
+	border-radius:4px;
+}
+.progress-bar.active{
+	animation:progress-bar-stripes .3s linear infinite;
+}
+#quantidade{
+	border-top-left-radius:0;
+	border-bottom-left-radius:0;
+}
+.select2-selection.select2-selection--single{
+	height:34px;
+	border-top-right-radius:0;
+	border-bottom-right-radius:0;
+}
+
+.leg-graf-fat{
+    margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: 0px 0px 0px 1px #1f1f1f;
+    outline: 0;
+    color: white;
+    border-radius: 4px;
+    margin-top: 4px;
+    float: right;
+    margin-right: 10px;
+    width: 10%;
+}
+.leg-graf-fat:active{
+    box-shadow: 0px 0px 3px 1px #1f1f1f;
+}
+
+

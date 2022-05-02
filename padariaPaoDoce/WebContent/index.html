@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pão Doce</title>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap core CSS -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+    <!-- Custom styles for this template -->
+    <link href="index.css" rel="stylesheet">
+	</head>
+<body>
+    <div class="container">
+    	<form class="form-signin" id="login" action="Login" method="POST" onsubmit="cript()">
+        <h2 align="center" class="form-signin-heading">Login</h2>
+    	<div align="center">
+    		<img src="fotos/login1.jpg">
+    	</div>
+        <label for="usuario" class="sr-only">Usuário</label>
+        <input type="text" name="usuario" class="form-control" placeholder="Usuário" required autofocus>
+        <label for="senha" class="sr-only">Senha</label>
+        <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
+        <input type="hidden" id="crip" name="crip">
+        <div class="esqueci" >
+          <a href="#" onclick="esqueciSenha()">--Esqueci minha senha</a>
+        </div> 
+        <button class="btn btn-lg btn-primary btn-block myclass" type="submit">Entrar</button>
+      </form>
+      <div style="display:none;" class="form-signin" id="esqueci">
+        <legend>Esqueci a Senha.</legend>
+        <p style="color:red;">Digite o seu E-mail e usuário para se autenticar.</p>
+        <label for="usuarioEsq" class="sr-only">Usuário</label>
+        <input style="background:transparent;color:black;" type="text" id="usuarioEsq" name="usuarioEsq" class="form-control" placeholder="Usuário" required autofocus>
+        <label for="emailEsq" class="sr-only">E-mail</label>
+        <input style="background:transparent;color:black;" type="text" name="emailEsq" id="emailEsq" class="form-control" placeholder="E-mail" required>
+    </div>
+    <div style="display:none;" class="form-signin" id="novaSenha">
+        <legend>Alterar a Senha.</legend>
+        <p style="color:red;">Digite uma nova senha para a sua conta.</p>
+        <label for="senhaNova" class="sr-only">E-mail</label>
+        <input style="background:transparent;color:black;" type="text" name="senhaNova" id="senhaNova" class="form-control" placeholder="Senha" required>
+        <label for="confirmar" class="sr-only">Confirmar senha</label>
+        <input style="background:transparent;color:black;" type="text" id="confirmar" name="confirmar" class="form-control" placeholder="Confirmar senha" required autofocus>
+    </div>
+    
+    
+
+   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>	
+  	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>

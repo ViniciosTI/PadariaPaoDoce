@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cadastro de funcionário - Pão Doce</title>
+<link rel="icon" href="../../fotos/logo.png">
+
+    <!-- Bootstrap Core CSS -->
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+    <link href="../estilo/css/home.css" rel="stylesheet">
+    <link href="../estilo/css/componentes.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div id="menu-container"  title="Menu"></div>
+    <header>
+	    <div class="container">
+	    	<h1>Cadastro de funcionário</h1>
+	    </div>
+	</header>
+    <!-- /#wrapper -->
+    <div class="conteudo">
+		<div class="container">
+			<div id="progress"></div>
+			<div class="row">
+				<div class="col-md-12">
+					<buttom type="buttom" class="btn btn-default" id="cadastro-toggle"><span id="aberto" class="glyphicon glyphicon-eye-open"></span><span id="fechado" class="glyphicon glyphicon-eye-close" style="display:none;"></span></buttom>
+					<fieldset class="registro" style="display:block;">
+					<p> * Campos obrigatórios</p>
+						<legend>Registro</legend>
+						<div class="conteudo">
+							<div class="input-group">
+						        <form id="formFuncionario" data-toggle="validator" role="form">
+									<div class="form-group col-md-12">
+										<label for="nome" class="control-label">Nome completo<p>*</p></label>
+										<input id="nome" name="nome" class="form-control" placeholder="Nome do completo..." required type="text" autofocus>
+									</div>
+									
+									<div class="form-group col-md-12">
+										<label for="email" class="control-label">E-mail<p>*</p></label>
+										<input id="email" name="email" maxlength="55" class="form-control" placeholder="Digite o E-mail" required type="email">
+									</div>
+									<div class="form-group col-md-6">
+										<label class="control-label" for="cargo">Cargo<p>*</p></label>
+										<div class="">
+											<select id="cargo" name="cargo" required class="form-control">
+												
+											</select>
+										</div>
+									</div>	
+									<div class="form-group col-md-6">
+										<label for="cpf" class="control-label">CPF<p>*</p></label>
+										<input id="cpf" name="cpf" class="form-control" required placeholder="000.000.000-00" type="text">
+									</div>						
+									
+									<div class="form-group col-md-6">
+										<label for="data" class="control-label">Data de nascimento<p>*</p></label>
+										<input id="data" name="data" class="form-control" required readonly type="text" placeholder="dd/mm/aaaa">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="telefone" class="control-label">Telefone<p>*</p></label>
+										<input id="telefone" name="telefone" class="form-control" required placeholder="(00) 0000-0000" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" type="text">
+									</div>
+									<div class="form-group col-md-12">
+										<label for="usuario" class="control-label">Usuário<p>*</p></label>
+										<input id="usuario" name="usuario" class="form-control" required placeholder="min. 6 letras" type="text">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="senha" class="control-label">Senha<p>*</p></label>
+										<input type="password" name="senha" required class="form-control" id="senha" placeholder="Digite a Senha...">
+									</div>
+									
+									<div class="form-group col-md-6">
+										<label for="confirmar" class="control-label">Confirme a Senha<p>*</p></label>
+										<input type="password" name="confirmar" required class="form-control" id="confirmar" placeholder="Confirme a Senha...">
+									</div>                                  
+									
+									<div class="col-md-12">
+										<button type="button" class="btn btn-primary" onclick="SENAI.funcionario.validacao()">Salvar</button>
+										<button type="reset" class="btn btn-default">Limpar</button>
+									</div>
+									
+								</form>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<div id="msg" style="display:none;"></div>
+			<div id="modal_edit" style="display:none;"></div>
+			<div id="campo_pesquisa"></div>
+			<div id="resultados"></div>
+			<div class="row" align="center">
+				<div class="col-md-12">
+					<nav aria-label="Page navigation">
+					  <ul class="pagination" id="paginacao">
+					    
+					  </ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="page-footer font-small">
+	<!-- Footer Links -->
+    <div class="text-center">
+      <div class="row">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <p>©Pão doce - Todos os direitos reservados</p>
+        </div>
+      </div>
+    </div>
+	</footer>
+	
+    <!-- jQuery -->
+  	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+	<script src="../js/plugins/bootstrap-notify-master/bootstrap-notify.js"></script>
+	<script src="../js/datepicker-pt-BR_js.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="js/funcionario.js"></script>
+	<script src="../js/acao.js"></script>
+	<script src="../js/ajax.js"></script>
+    <script src="../js/paginacao.js"></script>
+    <script src="../js/validacao.js"></script>
+    <script>
+    	$("input[name='cpf']").mask('000.000.000-00');
+    	$("input[name='telefone']").mask("(00) 0000-00000");
+    	$("#data").mask("99/99/9999", {
+    	    completed: function () {
+    	        console.log('complete')
+    	        var value = $(this).val().split('/');
+    	        var maximos = [31, 12, 9999];
+    	        var novoValor = value.map(function (parcela, i) {
+    	            if (parseInt(parcela, 10) > maximos[i]) return maximos[i];
+    	            return parcela;
+    	        });
+    	        if (novoValor.toString() != value.toString()) $(this).val(novoValor.join('/')).focus();
+    	    }
+    	});
+   	</script>
+	
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, shrink-to-fit=no, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Faturamento - Pão Doce</title>
+<link rel="icon" href="../../fotos/logo.png">
+
+<!-- Bootstrap Core CSS -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+<link href="../estilo/css/home.css" rel="stylesheet">
+<link href="../estilo/css/componentes.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+	<div id="menu-container" title="Menu"></div>
+
+	<header>
+		<div class="container">
+			<h1>Faturamento</h1>
+		</div>
+	</header>
+	<!-- /#wrapper -->
+	<div class="conteudo">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="grafico">
+						<div id="legendaFaturamento"
+							style="width: 250px; color: white; margin-left: 5px; border: none; font-size: 21px; float: left;"></div>
+						<button type="button" onclick="mudaGrafico('30')"
+							class="leg-graf-fat">30 dias</button>
+						<button type="button" onclick="mudaGrafico('15')"
+							class="leg-graf-fat">15 dias</button>
+						<button type="button" onclick="mudaGrafico('7')"
+							class="leg-graf-fat">7 dias</button>
+						<br style="clear: both">
+						<div class="conteudo">
+							<canvas id="faturamento" height="135px" width="900px"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<fieldset class="filtro">
+						<legend>Filtro</legend>
+						<div class="conteudo">
+							<div class="input-group">
+								<form class="formFiltro" data-toggle="validator" role="form">
+									<div class="col-md-8">
+										<div class="col-md-12">
+											<div class="form-group col-md-6">
+												<label for="data" class="control-label">Data </label> <input
+													id="data" name="data" class="form-control" required
+													readonly type="text" placeholder="dd-mm-aaaa">
+											</div>
+											<div class="form-group col-md-6">
+												<label for="ate" class="control-label">ate </label> <input
+													id="ate" name="ate" class="form-control" required readonly
+													type="text" placeholder="dd-mm-aaaa">
+											</div>
+										</div>
+									</div>
+									<div id="botao-fil-produto" class="col-md-4">
+										<div class="col-md-6">
+											<button type="button" id="buscar" onclick="pesquisar()"
+												class="btn btn-default">Buscar</button>
+										</div>
+										<div class="col-md-6">
+											<button type="reset" class="btn btn-default">Limpar</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<div id="resultados"></div>
+			<div class="row" align="center">
+				<div class="col-md-12">
+					<nav aria-label="Page navigation">
+					  <ul class="pagination" id="paginacao">
+					  </ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="page-footer font-small">
+		<!-- Footer Links -->
+		<div class="text-center">
+			<div class="row">
+				<div class="col-md-6 mt-md-0 mt-3">
+					<p>©Pão doce - Todos os direitos reservados</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>	
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+	<script src="../js/datepicker-pt-BR_js.js"></script>
+	<script src="../js/plugins/chartjs.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/acao.js"></script>
+	<script src="../js/ajax.js"></script>
+	<script src="../js/grafico.js"></script>
+	<script src="../js/paginacao.js"></script>
+	<script src="../graficos/grafico-faturamento.js"></script>
+	<script src="js/faturamento.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, shrink-to-fit=no, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Realizar vendas - Pão Doce</title>
+<link rel="icon" href="../../fotos/logo.png">
+<!-- Bootstrap Core CSS -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+<link href="../js/plugins/select2.css" rel="stylesheet" />
+<link href="../estilo/css/home.css" rel="stylesheet">
+<link href="../estilo/css/componentes.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div id="menu-container" title="Menu"></div>
+	<header>
+		<div class="container">
+			<h1>Realizar vendas</h1>
+		</div>
+	</header>
+	<!-- /#wrapper -->
+	<div class="conteudo">
+		<div class="container">
+		<div id="progress"></div>
+			<div class="row">
+				<div class="col-md-12" id="table-con-Vendas">
+					<table class="table" id="table-produtos">
+						<thead id="table_venda">
+							<tr style="background-color: #ddd;">
+								<td colspan="3">
+									<select id="seleciona_produto" class="select2" style="width: 100%; height: 35px;">
+											<option value=""></option>
+									</select>
+								</td>
+								<td colspan="3">
+									<label for="quantidade"	class="sr-only">Quantidade</label>
+								 	<input style="border-color:#c3c3c3;" id="quantidade"  placeholder="Quantidade..."	name="quantidade" class="form-control" required type="text"	placeholder="Digite a quantidade">
+								</td>
+								<td >
+									<button type="button" class="btn btn-primary" onclick="SENAI.venda.listaProdutos()">Salvar</button>
+								</td>
+							</tr>
+							<tr>
+								<th scope="col" width="1%">Id</th>
+								<th scope="col" width="8%">Nome do produto</th>
+								<th scope="col" width="5%">Quantidade</th>
+								<th scope="col" width="5%">Unid. de Medida</th>
+								<th scope="col" width="3%">Preco</th>
+								<th scope="col" width="2%">Preço total</th>
+								<th scope="col" width="1%">Cancelar</th>
+							</tr>
+							<tr id='b'>
+								<td scope='row' colspan='7' align='center'>Busque por produtos</td>
+							</tr>
+						</thead>
+						<tbody id="lista-venda">
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<hr />
+			<div class="row">
+				<div class="col-md-12">
+					<fieldset class="registro venda">
+						<legend>Registro</legend>
+						<div class="conteudo">
+							<div class="input-group">
+								<form id="formFuncionario" data-toggle="validator" role="form">
+									<div class="form-group col-md-6">
+										<label for="numeroVenda" class="control-label">Num. da
+											venda
+											<p>*</p>
+										</label> <input id="numeroVenda" name="numeroVenda" class="form-control"
+											placeholder="Numero da venda" style="border-color:#c3c3c3;" readonly type="text">
+									</div>
+
+									<div class="form-group col-md-6">
+											<label for="dataEmissao" class="control-label">Data de
+											Emissão
+											<p>*</p>
+										</label> <input id="dataEmissao" name="dataEmissao"
+											class="form-control" required readonly type="text"
+											placeholder="dd/mm/aaaa">
+									</div>
+									<div class="form-group col-md-6" style="padding-top:5px;">
+										<label class="control-label" for="formaPag" style="padding-bottom:5px;">Forma de pagamento</label>
+											<select id="formaPag" name="formaPag"
+												class="form-control">
+												<option value="">Selecione...</option>
+												<option value="0">Dinheiro</option>
+												<option value="1">Débito</option>
+												<option value="2">Crédito</option>
+											</select>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="dataFinal" class="control-label">Data
+											final
+											<p>*</p>
+										</label> <input id="dataFinal" name="dataFinal" class="form-control"
+											required readonly type="text" placeholder="dd/mm/aaaa">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="Descricao" class="preco-total control-label ">Valor
+											pago<input type="text" class="total form-control" readonly
+											id="valorTotal" placeholder="0.00">
+										</label>
+									</div>
+
+									<div class="form-group col-md-6">
+										<button type="button" onclick="SENAI.venda.realizarVenda()" class="btn btn-primary">Finalizar</button>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+	<buttom type="buttom" onClick="limpaTabela()" class="btn btn-default" id="vendas-toggle">Recomeçar</buttom>
+		</div>
+	</div>
+	<div id="modal" style="display:none;">Deseja mesmo realiza essa venda?</div>
+	<div id="msg" style="display:none;"></div>
+	<footer class="page-footer font-small">
+		<!-- Footer Links -->
+		<div class="text-center">
+			<div class="row">
+				<div class="col-md-6 mt-md-0 mt-3">
+					<p>©Pão doce - Todos os direitos reservados</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+		integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+		crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+	<script src="../js/datepicker-pt-BR_js.js"></script>
+	<script src="../js/plugins/select2.min.js"></script>
+	<script src="../js/plugins/bootstrap-notify-master/bootstrap-notify.js"></script>
+	<script src="../js/plugins/pt-BR.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="js/venda.js"></script>
+	<script src="../js/acao.js"></script>
+	<script src="../js/ajax.js"></script>
+	<script src="../js/validacao.js"></script>
+	
+	<!-- Menu Toggle Script -->
+
+</body>
+
+</html>

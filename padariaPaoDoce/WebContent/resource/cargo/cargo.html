@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cadastro de cargo - Pão Doce</title>
+<link rel="icon" href="../../fotos/logo.png">
+
+    <!-- Bootstrap Core CSS -->
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+    <link href="../estilo/css/home.css" rel="stylesheet">
+    <link href="../estilo/css/componentes.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div id="menu-container" title="Menu"></div>
+    <header>
+	    <div class="container">
+	    	<h1>Cadastro de cargo</h1>
+	    </div>
+	</header>
+    <!-- /#wrapper -->
+    <div class="conteudo">
+		<div class="container">	
+		<div id="progress"></div>
+			<div class="row">
+				<div class="col-md-12">
+					<buttom type="buttom" class="btn btn-default" id="cadastro-toggle"><span id="aberto" title="Esconder o cadastro" class="glyphicon glyphicon-eye-open"></span><span id="fechado" title="Abrir o cadastro" class="glyphicon glyphicon-eye-close" style="display:none;"></span></buttom>
+					<fieldset class="registro" style="display:block;">
+					<p> * Campos obrigatórios</p>
+						<legend>Registro</legend>
+						<div class="conteudo">
+							<div class="input-group">
+						        <form id="formFuncionario" data-toggle="validator" role="form">
+									<div class="form-group col-md-12">
+										<label for="funcao" class="control-label">Função<p>*</p></label>
+										<input id="funcao" name="funcao" class="form-control" placeholder="Padeiro ..." type="text" required autofocus>
+									</div>
+									
+									<div class="form-group col-md-6">
+										<label for="valor" class="control-label">Salário<p>*</p></label>
+										<input name="valor" maxlength="11" id="valor"  class="form-control" data-affixes-stay="true" data-prefix="R$ " placeholder="R$ 1,00" type="text" required min="0">
+									</div>
+									<div class="form-group col-md-6">
+										<label class="control-label"  for="permissao">Permissão<p>*</p></label>
+										<div class="">
+											<select id="permissao" name="permissao" required class="form-control">
+												<option value="">Selecione...</option>
+												<option value="0">Restrito</option>
+												<option value="1">Acesso de caixa</option>
+												<option value="2">Acesso total</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group col-md-12">
+										<label for="descricao" class="control-label">Descrição</label>
+										<textarea class="form-control" rows="3" maxlength="200" id="descricao" name="descricao" placeholder="Descrição do cargo --"></textarea>
+									</div>
+										
+									<div class="col-md-12">
+										<button type="button" class="btn btn-primary" onclick="SENAI.cargo.validacao()">Salvar</button>
+										<button type="reset" class="btn btn-default">Limpar</button>
+									</div>
+									
+								</form>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<div id="msg" style="display:none;"></div>
+			<div id="modal_edit" style="display:none;"></div>
+			<div id="campo_pesquisa"></div>
+			<div id="resultados"></div>
+			<div class="row" align="center">
+				<div class="col-md-12">
+					<nav aria-label="Page navigation">
+					  <ul class="pagination" id="paginacao">
+					    
+					  </ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="page-footer font-small">
+	<!-- Footer Links -->
+    <div class="text-center">
+      <div class="row">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <p>©Pão doce - Todos os direitos reservados</p>
+        </div>
+      </div>
+    </div>
+	</footer>
+	
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+    <script src="../js/plugins/bootstrap-notify-master/bootstrap-notify.js"></script>
+    <script src="../js/main.js"></script>
+	<script src="js/cargo.js"></script>
+	<script src="../js/acao.js"></script>
+	<script src="../js/ajax.js"></script>
+    <script src="../js/paginacao.js"></script>
+    <script src="../js/validacao.js"></script>
+	
+</body>
+
+</html>

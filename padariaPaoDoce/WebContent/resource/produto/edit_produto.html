@@ -1,0 +1,33 @@
+<div class="row">
+	<fieldset class="editar" style="display: block;">
+		<legend>Editar produto</legend>
+		<div class="conteudo">
+			<div class="input-group">
+				<form id="formFroduto" data-toggle="validator" role="form">
+					<div class="form-group col-md-12">
+						<label for="nomeEdit" class="control-label">Nome
+							<p>*</p>
+						</label> <input name="nomeEdit" id="nomeEdit" class="form-control"
+							placeholder="Nome do completo..." required type="text" autofocus>
+					</div>
+					<div class="form-group col-md-12">
+						<label for="unidadeEdit" class="control-label">Unid. Medida
+							<p>*</p>
+						</label> <select id="unidadeEdit" name="unidadeEdit" class="form-control">
+							<option value="">Selecione...</option>
+							<option value="0">Unidade</option>
+							<option value="1">Kilo</option>
+						</select>
+					</div>
+					<div class="form-group col-md-12">
+						<label for="valorEdit" class="control-label">Preço
+							<p>*</p>
+						</label> <input name="valorEdit" maxlength="11" id="valorEdit"  class="form-control" data-affixes-stay="true" data-prefix="R$ " placeholder="R$ 1,00" type="text" required min="0">
+
+					</div>
+					<input name="idProduto" id="idProduto" type="hidden">
+				</form>
+			</div>
+		</div>
+	</fieldset>
+</div>

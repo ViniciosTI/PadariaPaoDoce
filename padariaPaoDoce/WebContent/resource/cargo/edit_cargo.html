@@ -1,0 +1,36 @@
+<div class="row">
+	<fieldset class="editar" style="display: block;">
+		<legend>Editar cargo</legend>
+		<div class="conteudo">
+			<div class="input-group">
+		        <form id="formFuncionario" data-toggle="validator" role="form">
+					<div class="form-group col-md-12">
+						<label for="funcaoEdit" class="control-label">Função<p>*</p></label>
+						<input id="funcaoEdit" name="funcaoEdit" class="form-control" placeholder="Padeiro ..." type="text" required autofocus>
+					</div>
+					
+					<div class="form-group col-md-6">
+						<label for="valorEdit" class="control-label">Salário<p>*</p></label>
+						<input name="valorEdit" maxlength="11" id="valorEdit"  class="form-control" data-affixes-stay="true" data-prefix="R$ " placeholder="R$ 1,00" type="text" required min="0">
+					</div>
+					<div class="form-group col-md-6">
+						<label class="control-label" for="permissaoEdit">Permissão<p>*</p></label>
+						<div class="">
+							<select id="permissaoEdit" name="permissaoEdit" required class="form-control">
+								<option value="">Selecione...</option>
+								<option value="0">Restrito</option>
+								<option value="1">Acesso de caixa</option>
+								<option value="2">Acesso total</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group col-md-12">
+						<label for="descricaoEdit" class="control-label">Descrição</label>
+						<textarea class="form-control" rows="3" maxlength="200" id="descricaoEdit" name="descricaoEdit" placeholder="Descrição do cargo --"></textarea>
+					</div>
+					<input name="idCargo" id="idCargo" type="hidden">
+				</form>
+			</div>
+		</div>
+	</fieldset>
+</div>
